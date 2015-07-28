@@ -22,7 +22,7 @@ if ( !isset( $content_width ) ) $content_width = 792;
 /* Theme Setup
 /*----------------------------------------------------------------------------*/
 
-add_action( 'after_setup_theme', 'compendio_theme_setup', 10 );
+add_action( 'after_setup_theme', 'nucleo_theme_setup', 10 );
 
 /**
  * Theme Setup
