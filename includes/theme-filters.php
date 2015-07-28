@@ -62,8 +62,8 @@ add_filter( 'mce_buttons_2', 'nucleo_style_mce_button', 10, 1 );
  */
 
 function nucleo_style_mce_button( $buttons ) {
-	array_unshift( $buttons, 'styleselect' );
-	return $buttons;
+    array_unshift( $buttons, 'styleselect' );
+    return $buttons;
 }
 
 /*----------------------------------------------------------------------------*/
@@ -90,7 +90,7 @@ add_filter( 'tiny_mce_before_init', 'nucleo_custom_theme_classes', 10, 1 );
 function nucleo_custom_theme_classes( $settings ) {
     $style_formats = array(
         array(
-            'title'    => __( 'Primary Button', 'compendio' ),
+            'title'    => __( 'Primary Button', 'nucleo' ),
             'selector' => 'a',
             'classes'  => 'button primary-button',
         ),
@@ -249,7 +249,7 @@ add_filter( 'the_password_form', 'nucleo_custom_pw_form', 10 );
  * @package Nucleo
  * @version 1.0.0
  * @since 1.0.0
- * @author Erik Ford for Heavy Heavy <@okayerik>
+ * @author Erik Ford <@okayerik>
  *
  */
 
