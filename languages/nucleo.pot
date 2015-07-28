@@ -1,0 +1,197 @@
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Nucleo\n"
+"POT-Creation-Date: 2015-07-28 02:38-0500\n"
+"PO-Revision-Date: 2015-07-28 02:37-0500\n"
+"Last-Translator: We Are Pixel8 <hello@wearepixel8.com>\n"
+"Language-Team: We Are Pixel8 <hello@wearepixel8.com>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.8.3\n"
+"X-Poedit-Basepath: ..\n"
+"X-Poedit-WPHeader: style.css\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;"
+"esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;_n_noop:1,2;"
+"_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPathExcluded-0: *.js\n"
+
+#: comments.php:17
+msgid "This post is password protected. Enter the password to view comments."
+msgstr ""
+
+#: comments.php:28
+#, php-format
+msgid "1 Comment"
+msgid_plural "%1$s Comments"
+msgstr[0] ""
+
+#: comments.php:31
+msgid "Comments for this post are now closed."
+msgstr ""
+
+#: comments.php:54
+msgid "&laquo; Older Comments"
+msgstr ""
+
+#: comments.php:55
+msgid "Newer Comments &raquo;"
+msgstr ""
+
+#: comments.php:60
+msgid "Comments Closed"
+msgstr ""
+
+#: comments.php:61
+msgid "Comments for this post are closed."
+msgstr ""
+
+#: comments.php:67
+msgid "Post Comment"
+msgstr ""
+
+#: comments.php:68
+msgid "Leave a Comment"
+msgstr ""
+
+#: comments.php:69
+msgid "Cancel Response"
+msgstr ""
+
+#: comments.php:71
+msgid "Your Name"
+msgstr ""
+
+#: comments.php:71
+msgid "Name"
+msgstr ""
+
+#: comments.php:72
+msgid "Your Email"
+msgstr ""
+
+#: comments.php:72
+msgid "Email"
+msgstr ""
+
+#: comments.php:73
+msgid "Your URL"
+msgstr ""
+
+#: comments.php:73
+msgid "Your Website"
+msgstr ""
+
+#: comments.php:75
+msgid "Comment<span class=\"rq\">&#42;</span>"
+msgstr ""
+
+#: comments.php:75
+msgid "Your comment"
+msgstr ""
+
+#: comments.php:76
+msgid ""
+"<p class=\"form-rules\">Your email address will never be published or "
+"shared. Required fields are marked with an asterisk (<span class=\"rq\">*</"
+"span>).</p>"
+msgstr ""
+
+#: includes/theme-filters.php:93
+msgid "Primary Button"
+msgstr ""
+
+#: includes/theme-filters.php:204 includes/theme-filters.php:231
+msgid "Search"
+msgstr ""
+
+#: includes/theme-filters.php:206 includes/theme-filters.php:233
+msgid "Submit"
+msgstr ""
+
+#: includes/theme-filters.php:232
+msgid "Enter search keywords"
+msgstr ""
+
+#: includes/theme-filters.php:262
+msgid "Enter the password to view this post."
+msgstr ""
+
+#: includes/theme-filters.php:263
+msgid "Enter Password"
+msgstr ""
+
+#: includes/theme-filters.php:264
+msgid "Submit Password"
+msgstr ""
+
+#: includes/theme-filters.php:292
+msgid "This post is password protected."
+msgstr ""
+
+#: includes/theme-template-tags.php:42
+msgid "Permanent link to this comment"
+msgstr ""
+
+#: includes/theme-template-tags.php:46
+msgid "Your comment is awaiting moderation."
+msgstr ""
+
+#: includes/theme-template-tags.php:51 includes/theme-template-tags.php:82
+msgid "Edit"
+msgstr ""
+
+#: includes/theme-template-tags.php:132
+#, php-format
+msgid "<h1>Articles tagged &lsquo;%s&rsquo;</h1>"
+msgstr ""
+
+#: includes/theme-template-tags.php:142
+#, php-format
+msgid "<h1>Search Results for &ldquo;%s&rdquo;</h1>"
+msgstr ""
+
+#: includes/theme-template-tags.php:144
+msgid "<h1>404 Error: Page not found</h1>"
+msgstr ""
+
+#: includes/theme-template-tags.php:223
+msgid "Previous"
+msgstr ""
+
+#: includes/theme-template-tags.php:224
+msgid "Next"
+msgstr ""
+
+#: includes/theme-template-tags.php:249
+msgid "Pages "
+msgstr ""
+
+#: index.php:1
+msgid "You have incorrectly activated Nucleo as your parent theme."
+msgstr ""
+
+#. Theme Name of the plugin/theme
+msgid "Nucleo"
+msgstr ""
+
+#. Theme URI of the plugin/theme
+msgid "https://github.com/erikford/nucleo"
+msgstr ""
+
+#. Description of the plugin/theme
+msgid ""
+"A WordPress boilerplate theme used as a parent theme for all custom child "
+"themes."
+msgstr ""
+
+#. Author of the plugin/theme
+msgid "Erik Ford"
+msgstr ""
+
+#. Author URI of the plugin/theme
+msgid "http://erikford.me"
+msgstr ""

@@ -1,0 +1,1 @@
+<?php echo __( 'You have incorrectly activated Nucleo as your parent theme.', 'nucleo' ); ?>
