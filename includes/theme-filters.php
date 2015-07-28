@@ -99,7 +99,7 @@ function nucleo_custom_theme_classes( $settings ) {
 
 	$settings['style_formats'] = json_encode( $style_formats );
 
-	return $settings;
+    return $settings;
 }
 
 /*----------------------------------------------------------------------------*/
@@ -124,7 +124,7 @@ add_filter( 'excerpt_length', 'nucleo_trim_excerpt', 10, 1 );
  */
 
 function nucleo_trim_excerpt( $length ) {
-	return 35;
+    return 35;
 }
 
 /*----------------------------------------------------------------------------*/
@@ -149,7 +149,7 @@ add_filter( 'excerpt_more', 'nucleo_excerpt_ellipsis', 10, 1 );
  */
 
 function nucleo_excerpt_ellipsis( $more ) {
-	return '&hellip;';
+    return '&hellip;';
 }
 
 /*----------------------------------------------------------------------------*/
@@ -175,8 +175,8 @@ add_filter( 'the_content_more_link', 'nucleo_post_teaser', 10, 1 );
  */
 
 function nucleo_post_teaser( $link ) {
-	$link = '<p class="post-teaser">' . preg_replace( '|#more-[0-9]+|', '', $link ) . '</p>';
-	return $link;
+    $link = '<p class="post-teaser">' . preg_replace( '|#more-[0-9]+|', '', $link ) . '</p>';
+    return $link;
 }
 
 /*----------------------------------------------------------------------------*/
@@ -205,7 +205,7 @@ function nucleo_main_search_form( $form ) {
     $form .= "<input id='s' name='s' type='search'>";
     $form .= "<input type='submit' value='" . esc_attr__( 'Submit', 'nucleo' ) . "'>";
     $form .= "</form>";
-	return $form;
+    return $form;
 }
 
 /*----------------------------------------------------------------------------*/
@@ -232,7 +232,7 @@ function compendio_alt_search_form( $form ) {
     $form .= "<input id='s2' name='s' type='search' placeholder='" . esc_attr__( 'Enter search keywords', 'nucleo' ) . "'>";
     $form .= "<input type='submit' name='submit' value='" . esc_attr__( 'Submit', 'nucleo' ) . "'>";
     $form .= "</form>";
-	return $form;
+    return $form;
 }
 
 /*----------------------------------------------------------------------------*/
@@ -263,7 +263,7 @@ function nucleo_custom_pw_form() {
     $pwf .= "<p><label for='" . $label . "'>" . __( 'Enter Password', 'nucleo' ) . "</label><input name='post_password' id='" . $label . "' type='password' size='20' maxlength='20' /><br>";
     $pwf .= "<input type='submit' name='submit' value='" . esc_attr__( 'Submit Password', 'nucleo' ) . "' /></p>";
     $pwf .= "</form>";
-	return $pwf;
+    return $pwf;
 }
 
 /*----------------------------------------------------------------------------*/
@@ -288,7 +288,7 @@ add_filter( 'the_excerpt', 'nucleo_pw_protected_excerpt', 10, 1 );
  */
 
 function compendio_pw_protected_excerpt( $excerpt ) {
-	if ( post_password_required() )
-		$excerpt = "<p class='form-messages'>" . __( 'This post is password protected.', 'nucleo' ) . "</p>";
-	return $excerpt;
+    if ( post_password_required() )
+        $excerpt = "<p class='form-messages'>" . __( 'This post is password protected.', 'nucleo' ) . "</p>";
+    return $excerpt;
 }
