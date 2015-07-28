@@ -97,7 +97,7 @@ function nucleo_custom_theme_classes( $settings ) {
     );
     $style_formats = apply_filters( 'nucleo_style_formats', $style_formats );
 
-	$settings['style_formats'] = json_encode( $style_formats );
+    $settings['style_formats'] = json_encode( $style_formats );
 
     return $settings;
 }

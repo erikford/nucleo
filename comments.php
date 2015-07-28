@@ -4,7 +4,7 @@
  *
  * This template is loaded by single.php and contains comments and the comment
  * form. The display of comments is handled by nucleo_user_comments_cb()
- * and nucleo_trackback_comments_cb() functions located in /includes/theme-helpers.php.
+ * and nucleo_trackback_comments_cb() functions located in /includes/theme-template-tags.php.
  *
  * @package Nucleo
  * @version 1.0.0
