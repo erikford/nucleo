@@ -38,6 +38,9 @@ add_action( 'after_setup_theme', 'nucleo_theme_setup', 10 );
  */
 
 function nucleo_theme_setup() {
+    // define version
+    define( 'NUCLEO_VERSION', '1.0.0' );
+
     // add theme support for automatic-feed-links
     add_theme_support( 'automatic-feed-links' );
 
@@ -170,7 +173,7 @@ add_action( 'wp_enqueue_scripts', 'nucleo_theme_stylesheets', 10 );
 function nucleo_theme_stylesheets() {
     if ( !is_admin() ) { // we do not want to register or enqueue these styles on admin screens
         // enqueue core stylesheet
-        wp_enqueue_style( 'nucleo', get_stylesheet_uri(), '', filetime( get_stylesheet_uri() ), 'screen' );
+        wp_register_style( 'nucleo', get_stylesheet_uri(), '', NUCLEO_VERSION, 'screen' );
     }
 }
 

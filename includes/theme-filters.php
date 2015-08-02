@@ -292,3 +292,28 @@ function compendio_pw_protected_excerpt( $excerpt ) {
         $excerpt = "<p class='form-messages'>" . __( 'This post is password protected.', 'nucleo' ) . "</p>";
     return $excerpt;
 }
+
+/*----------------------------------------------------------------------------*/
+/* Show Kitchen Sink
+/*----------------------------------------------------------------------------*/
+
+add_filter( 'tiny_mce_before_init', 'nucleo_show_kitchen_sink', 10, 1 );
+
+/**
+ * Show Kitchen Sink
+ *
+ * Show the TinyMCE Kitchen Sink by default.
+ *
+ * @param $args
+ *
+ * @package Nucleo
+ * @version 1.0.0
+ * @since 1.0.0
+ * @author Erik Ford <@okayerik>
+ *
+ */
+
+function nucleo_show_kitchen_sink( $args ) {
+    $args['wordpress_adv_hidden'] = false;
+    return $args;
+}
