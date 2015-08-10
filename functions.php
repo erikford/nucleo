@@ -48,19 +48,7 @@ function nucleo_theme_setup() {
     add_theme_support( 'html5', array( 'gallery' ) );
 
     // add theme support for post formats
-    $formats_args = array(
-        'aside',
-        'audio',
-        'chat',
-        'image',
-        'gallery',
-        'link',
-        'status',
-        'quote',
-        'video'
-    );
-    $formats_args = apply_filters( 'nucleo_post_formats_args', $formats_args );
-    add_theme_support( 'post-formats', array( $formats_args  ) );
+    add_theme_support( 'post-formats', array( 'aside', 'audio', 'chat', 'image', 'gallery', 'link', 'status', 'quote', 'video' ) );
 
     // add theme support for document title tag
     add_theme_support( 'title-tag' );

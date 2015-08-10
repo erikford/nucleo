@@ -202,7 +202,7 @@ add_filter( 'get_search_form', 'nucleo_main_search_form', 10, 1 );
 function nucleo_main_search_form( $form ) {
     $form = "<form class='search-form' id='search-form' action='" . get_home_url() . "/' method='get' role='search'>";
     $form .= "<label for='s'>" . __( 'Search', 'compendio' ) . "</label>";
-    $form .= "<input id='s' name='s' type='search'>";
+    $form .= "<input id='s' name='s' placeholder='" . __( 'Enter search keywords', 'nucleo' ) . "' type='search'>";
     $form .= "<input type='submit' value='" . esc_attr__( 'Submit', 'nucleo' ) . "'>";
     $form .= "</form>";
     return $form;
