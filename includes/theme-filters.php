@@ -226,7 +226,7 @@ function nucleo_main_search_form( $form ) {
  *
  */
 
-function compendio_alt_search_form( $form ) {
+function nucleo_alt_search_form( $form ) {
     $form = "<form class='alt-search-form' id='alt-search-form' action='" . get_home_url() . "/' method='get' role='search'>";
     $form .= "<label for='s2'>" . __( 'Search', 'nucleo' ) . "</label>";
     $form .= "<input id='s2' name='s' type='search' placeholder='" . esc_attr__( 'Enter search keywords', 'nucleo' ) . "'>";
