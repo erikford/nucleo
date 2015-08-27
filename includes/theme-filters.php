@@ -287,7 +287,7 @@ add_filter( 'the_excerpt', 'nucleo_pw_protected_excerpt', 10, 1 );
  *
  */
 
-function compendio_pw_protected_excerpt( $excerpt ) {
+function nucleo_pw_protected_excerpt( $excerpt ) {
     if ( post_password_required() )
         $excerpt = "<p class='form-messages'>" . __( 'This post is password protected.', 'nucleo' ) . "</p>";
     return $excerpt;
