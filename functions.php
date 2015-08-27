@@ -181,23 +181,25 @@ function nucleo_theme_stylesheets() {
 /* Remove Recent Comments Inline CSS
 /*----------------------------------------------------------------------------*/
 
-add_action( 'widgets_init', 'nucleo_remove_recent_comments_inline_css' );
-
-/**
- * Remove Recent Comments Inline CSS
- *
- * Remove inline styles injected by Recent Comments widget.
- *
- * @package Nucleo
- * @version 1.0.0
- * @since 1.0.0
- * @author Erik Ford <@okayerik>
- *
- */
-
-function nucleo_remove_recent_comments_inline_css() {
-    global $wp_widget_factory;
-    remove_action( 'wp_head', array( $wp_widget_factory->widgets['WP_Widget_Recent_Comments'], 'recent_comments_style' ) );
+if ( !class_exists( 'Disable_Comments' ) ) {
+    add_action( 'widgets_init', 'nucleo_remove_recent_comments_inline_css' );
+    
+    /**
+     * Remove Recent Comments Inline CSS
+     *
+     * Remove inline styles injected by Recent Comments widget.
+     *
+     * @package Nucleo
+     * @version 1.0.0
+     * @since 1.0.0
+     * @author Erik Ford <@okayerik>
+     *
+     */
+    
+    function nucleo_remove_recent_comments_inline_css() {
+        global $wp_widget_factory;
+        remove_action( 'wp_head', array( $wp_widget_factory->widgets['WP_Widget_Recent_Comments'], 'recent_comments_style' ) );
+    }
 }
 
 /*----------------------------------------------------------------------------*/
