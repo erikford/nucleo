@@ -261,29 +261,3 @@ function nucleo_post_pagination() {
 
     wp_link_pages( $args );
 }
-
-/*----------------------------------------------------------------------------*/
-/* Get Theme Menu Name
-/*----------------------------------------------------------------------------*/
-
-/**
- * Get Theme Menu Name
- *
- * Get the saved name value of a theme menu.
- *
- * @param $theme_location Theme location object from register_nav_menus()
- *
- * @package nucleo
- * @version 1.0.0
- * @since 1.0.1
- * @author Erik Ford <@okayerik>
- *
- */
-
-function nucleo_get_theme_menu_name( $theme_location ) {
-    if ( !has_nav_menu( $theme_location ) ) return false;
-
-    $menus      = get_nav_menu_locations();
-    $menu_title = wp_get_nav_menu_object( $menus[$theme_location] )->name;
-    return $menu_title;
-}
