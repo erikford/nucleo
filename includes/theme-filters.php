@@ -15,7 +15,7 @@ add_filter( 'img_caption_shortcode', 'nucleo_html5_image_caption', 10, 3 );
  * @param $attr
  * @param $content
  *
- * @package Nucleo
+ * @package nucleo
  * @version 1.0.0
  * @since 1.0.0
  * @author Erik Ford <@okayerik>
@@ -54,7 +54,7 @@ add_filter( 'mce_buttons_2', 'nucleo_style_mce_button', 10, 1 );
  * @param $buttons
  * @return $buttons
  *
- * @package Nucleo
+ * @package nucleo
  * @version 1.0.0
  * @since 1.0.0
  * @author Erik Ford <@okayerik>
@@ -80,7 +80,7 @@ add_filter( 'tiny_mce_before_init', 'nucleo_custom_theme_classes', 10, 1 );
  * @param $settings
  * @return $settings
  *
- * @package Nucleo
+ * @package nucleo
  * @version 1.0.0
  * @since 1.0.0
  * @author Erik Ford <@okayerik>
@@ -116,7 +116,7 @@ add_filter( 'excerpt_length', 'nucleo_trim_excerpt', 10, 1 );
  * @param $length Default length
  * @return integer Filtered length
  *
- * @package Nucleo
+ * @package nucleo
  * @version 1.0.0
  * @since 1.0.0
  * @author Erik Ford <@okayerik>
@@ -141,7 +141,7 @@ add_filter( 'excerpt_more', 'nucleo_excerpt_ellipsis', 10, 1 );
  * @param $more Default more string
  * @return string Filtered more string
  *
- * @package Nucleo
+ * @package nucleo
  * @version 1.0.0
  * @since 1.0.0
  * @author Erik Ford <@okayerik>
@@ -167,7 +167,7 @@ add_filter( 'the_content_more_link', 'nucleo_post_teaser', 10, 1 );
  * @param $link Default link string
  * @return $link Filtered link string
  *
- * @package Nucleo
+ * @package nucleo
  * @version 1.0.0
  * @since 1.0.0
  * @author Erik Ford <@okayerik>
@@ -192,7 +192,7 @@ add_filter( 'get_search_form', 'nucleo_main_search_form', 10, 1 );
  *
  * @param $form Default search form
  *
- * @package Nucleo
+ * @package nucleo
  * @version 1.0.0
  * @since 1.0.0
  * @author Erik Ford <@okayerik>
@@ -219,7 +219,7 @@ function nucleo_main_search_form( $form ) {
  *
  * @param $form Default search form
  *
- * @package Compendio
+ * @package nucleo
  * @version 1.0.0
  * @since 1.0.0
  * @author Erik Ford <@okayerik>
@@ -246,7 +246,7 @@ add_filter( 'the_password_form', 'nucleo_custom_pw_form', 10 );
  *
  * The HTML output for our custom password form.
  *
- * @package Nucleo
+ * @package nucleo
  * @version 1.0.0
  * @since 1.0.0
  * @author Erik Ford <@okayerik>
@@ -280,7 +280,7 @@ add_filter( 'the_excerpt', 'nucleo_pw_protected_excerpt', 10, 1 );
  *
  * @param $excerpt
  *
- * @package Nucleo
+ * @package nucleo
  * @version 1.0.0
  * @since 1.0.0
  * @author Erik Ford <@okayerik>

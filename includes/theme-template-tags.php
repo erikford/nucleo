@@ -13,7 +13,7 @@
  * @param $args
  * @param $depth
  *
- * @package Nucleo
+ * @package nucleo
  * @version 1.0.0
  * @since 1.0.0
  * @author Erik Ford <@okayerik>
@@ -70,7 +70,7 @@ function nucleo_user_comments_cb( $comment, $args, $depth ) {
  *
  * @param $comment
  *
- * @package Nucleo
+ * @package nucleo
  * @version 1.0.0
  * @since 1.0.0
  * @author Erik Ford <@okayerik>
@@ -94,7 +94,7 @@ $GLOBALS['comment'] = $comment; ?>
  *
  * @param $theme_location Theme location object from register_nav_menus()
  *
- * @package Nucleo
+ * @package nucleo
  * @version 1.0.0
  * @since 1.0.0
  * @author Erik Ford <@okayerik>
@@ -118,9 +118,9 @@ function nucleo_get_theme_menu_name( $theme_location ) {
  *
  * Print the archive title.
  *
- * @package Nucleo
+ * @package nucleo
  * @version 1.0.0
- * @since 1.0.0
+ * @since 1.0.1 added conditions for author archive
  * @author Erik Ford <@okayerik>
  *
  */
@@ -142,6 +142,10 @@ function nucleo_archive_title() {
         printf( __( '<h1>Search Results for &ldquo;%s&rdquo;</h1>', 'nucleo' ), get_search_query() );
     } else if ( is_404() ) {
         echo __( '<h1>404 Error: Page not found</h1>', 'nucleo' );
+    } else if ( is_author() ) {
+        global $wp_query;
+        $currauth = $wp_query->get_queried_object();
+        echo __( '<h1>Posts by ' . esc_html( $currauth->display_name ) . '</h1>', 'nucleo' );
     } else if ( get_option( 'page_for_posts' ) ) {
         printf( '<h1>%s</h1>', get_the_title( get_option( 'page_for_posts' ) ) );
     }
@@ -156,7 +160,7 @@ function nucleo_archive_title() {
  *
  * Perform the index loop for index templates.
  *
- * @package Nucleo
+ * @package nucleo
  * @version 1.0.0
  * @since 1.0.0
  * @author Erik Ford <@okayerik>
@@ -182,7 +186,7 @@ function nucleo_index_loop() {
  *
  * Perform the content loop for singular templates.
  *
- * @package Nucleo
+ * @package nucleo
  * @version 1.0.0
  * @since 1.0.0
  * @author Erik Ford <@okayerik>
@@ -204,7 +208,7 @@ function nucleo_content_loop() {
  *
  * Print archive pagination when necessary.
  *
- * @package Nucleo
+ * @package nucleo
  * @version 1.0.0
  * @since 1.0.0
  * @author Erik Ford <@okayerik>
@@ -237,7 +241,7 @@ function nucleo_archive_pagination() {
  *
  * Print post pagination when <!--nextpage--> tag is present.
  *
- * @package compendio
+ * @package nucleo
  * @version 1.0.0
  * @since 1.0.0
  * @author Erik Ford <@okayerik>
@@ -256,4 +260,30 @@ function nucleo_post_pagination() {
     $args = apply_filters( 'nucleo_post_paging_args', $args );
 
     wp_link_pages( $args );
+}
+
+/*----------------------------------------------------------------------------*/
+/* Get Theme Menu Name
+/*----------------------------------------------------------------------------*/
+
+/**
+ * Get Theme Menu Name
+ *
+ * Get the saved name value of a theme menu.
+ *
+ * @param $theme_location Theme location object from register_nav_menus()
+ *
+ * @package nucleo
+ * @version 1.0.0
+ * @since 1.0.1
+ * @author Erik Ford <@okayerik>
+ *
+ */
+
+function nucleo_get_theme_menu_name( $theme_location ) {
+    if ( !has_nav_menu( $theme_location ) ) return false;
+
+    $menus      = get_nav_menu_locations();
+    $menu_title = wp_get_nav_menu_object( $menus[$theme_location] )->name;
+    return $menu_title;
 }

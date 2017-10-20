@@ -6,7 +6,7 @@
  * form. The display of comments is handled by nucleo_user_comments_cb()
  * and nucleo_trackback_comments_cb() functions located in /includes/theme-template-tags.php.
  *
- * @package Nucleo
+ * @package nucleo
  * @version 1.0.0
  * @since 1.0.0
  * @author Erik Ford <@okayerik>
@@ -57,8 +57,8 @@
 <?php endif; // end comments pagination conditional check ?>
 
 <?php elseif ( !comments_open() && !is_page() && post_type_supports( get_post_type(), 'comments' ) ) : // if there are no comments and comments are closed and the post type supports comments ?>
-    <h3 class="comments-head"><?php _e( 'Comments Closed', 'compendio' ); ?></h3>
-    <p class="form-messages"><?php _e( 'Comments for this post are closed.', 'compendio' ); ?></p>
+    <h3 class="comments-head"><?php _e( 'Comments Closed', 'nucleo' ); ?></h3>
+    <p class="form-messages"><?php _e( 'Comments for this post are closed.', 'nucleo' ); ?></p>
 <?php endif; // end conditional check for post comments ?>
 
 <?php

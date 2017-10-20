@@ -8,7 +8,7 @@
  *
  * Set the maximum content width.
  *
- * @package Nucleo
+ * @package nucleo
  * @version 1.0.0
  * @since 1.0.0
  * @author Erik Ford <@okayerik>
@@ -30,22 +30,19 @@ add_action( 'after_setup_theme', 'nucleo_theme_setup', 10 );
  * Perform basic theme setup, registrations and init actions during theme
  * initialization.
  *
- * @package Nucleo
+ * @package nucleo
  * @version 1.0.0
- * @since 1.0.0
+ * @since 1.0.1 bringing theme up to date
  * @author Erik Ford <@okayerik>
  *
  */
 
 function nucleo_theme_setup() {
-    // define version
-    define( 'NUCLEO_VERSION', '1.0.0' );
-
     // add theme support for automatic-feed-links
     add_theme_support( 'automatic-feed-links' );
 
-    // add theme support for HTML5 galleries & captions
-    add_theme_support( 'html5', array( 'gallery' ) );
+    // add theme support for HTML5 markup
+    add_theme_support( 'html5', array( 'comment-list', 'comment-form', 'search-form', 'gallery', 'caption' ) );
 
     // add theme support for post formats
     add_theme_support( 'post-formats', array( 'aside', 'audio', 'chat', 'image', 'gallery', 'link', 'status', 'quote', 'video' ) );
@@ -55,6 +52,9 @@ function nucleo_theme_setup() {
 
     // add theme support for post thumnail and setting the size
     add_theme_support( 'post-thumbnails' );
+
+    // add theme support for customize selective refresh widgets
+    add_theme_support( 'customize-selective-refresh-widgets' );
 
     // make theme available for translation
     // translations can be filed in the /languages/ directory
@@ -77,7 +77,7 @@ add_action( 'init', 'nucleo_theme_includes', 10 );
  *
  * Load custom theme helpers, actions and filters.
  *
- * @package Nucleo
+ * @package nucleo
  * @version 1.0.0
  * @since 1.0.0
  * @author Erik Ford <@okayerik>
@@ -103,7 +103,7 @@ add_action( 'wp_head', 'nucleo_viewport_width', 10 );
  *
  * Setting the viewport width for device agnostic mobile first layouts.
  *
- * @package Nucleo
+ * @package nucleo
  * @version 1.0.0
  * @since 1.0.0
  * @author Erik Ford <@okayerik>
@@ -127,7 +127,7 @@ add_action( 'wp_head', 'nucleo_ms_viewport_patch', 10 );
  *
  * Applying the Microsoft recommended solution for the viewport bug in Windows 8.
  *
- * @package Nucleo
+ * @package nucleo
  * @version 1.0.0
  * @since 1.0.0
  * @author Erik Ford <@okayerik>
@@ -173,7 +173,7 @@ add_action( 'wp_enqueue_scripts', 'nucleo_theme_stylesheets', 10 );
 function nucleo_theme_stylesheets() {
     if ( !is_admin() ) { // we do not want to register or enqueue these styles on admin screens
         // enqueue core stylesheet
-        wp_register_style( 'nucleo', get_stylesheet_uri(), '', NUCLEO_VERSION, 'screen' );
+        wp_register_style( 'nucleo', get_stylesheet_uri(), '', wp_get_theme()->get( 'Version' ), 'screen' );
     }
 }
 
@@ -189,7 +189,7 @@ if ( !class_exists( 'Disable_Comments' ) ) {
      *
      * Remove inline styles injected by Recent Comments widget.
      *
-     * @package Nucleo
+     * @package nucleo
      * @version 1.0.0
      * @since 1.0.0
      * @author Erik Ford <@okayerik>
@@ -214,7 +214,7 @@ add_action( 'wp_enqueue_scripts', 'nucleo_theme_scripts', 10 );
  * Register and enqueue all theme related javascript files using 
  * wp_register_script() and wp_enqueue_script() respectively.
  *
- * @package Nucleo
+ * @package nucleo
  * @version 1.0.0
  * @since 1.0.0
  * @author Erik Ford <@okayerik>
@@ -229,33 +229,5 @@ function nucleo_theme_scripts() {
         // enqueue comment reply JS
         if ( is_single() && comments_open() && get_option( 'thread_comments' ) )
             wp_enqueue_script( 'comment-reply' );
-    }
-}
-
-/*----------------------------------------------------------------------------*/
-/* Remove Widgets
-/*----------------------------------------------------------------------------*/
-
-add_action( 'widgets_init', 'nucleo_remove_widgets', 10 );
-
-/**
- * Remove Widgets
- *
- * @package Nucleo
- * @version 1.0.0
- * @since 1.0.0
- * @author Erik Ford <@okayerik>
- *
- */
-
-if ( !function_exists( 'nucleo_remove_widgets' ) ) {
-    function nucleo_remove_widgets() {
-        unregister_widget( 'WP_Widget_Pages' );
-        unregister_widget( 'WP_Widget_Calendar' );
-        unregister_widget( 'WP_Widget_Links' );
-        unregister_widget( 'WP_Widget_Meta' );
-        unregister_widget( 'WP_Widget_Recent_Comments' );
-        unregister_widget( 'WP_Widget_RSS' );
-        unregister_widget( 'WP_Widget_Tag_Cloud' );
     }
 }
